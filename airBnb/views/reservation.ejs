@@ -1,0 +1,39 @@
+<h1>Reservation de l'hotel  <%= name %> numéro <%= id %></h1>
+
+<p>
+
+<form action="/destination/hotel/reservation/" method="get">
+Nom de l'hotel :
+<%=
+hotel.nom
+%>
+<br/>
+Prix de l'hotel :
+<%=
+hotel.prix
+%>
+<br/>
+places disponnibles de l'hotel :
+<%=
+hotel.places
+%>
+<br/>
+Nombre des places souhaitées
+
+<select name="placesR">
+    <%
+    for (var index = 1; index <= hotel.places; index++) {
+    %>
+        <option value="<%= index %>"><%= index %></option>
+    <%
+    }
+    %>
+</select>
+
+<input type="hidden" name="id" value="<%= id %>">
+<input type="hidden" name="nom" value="<%= name %>">
+<br/>
+<button type="submit">Réserver</button>
+</form>
+
+</p>
