@@ -1,0 +1,38 @@
+<h1>Liste des hotels à <%= nom %></h1>
+
+<p>
+
+<%
+
+for (var item in  createdDestinations ) {
+    console.log(createdDestinations)
+   %>
+
+   <form action="/destination/hotel" method="get">
+   Nom :
+   <%=
+   JSON.stringify(createdDestinations[item].nom)
+   %>
+   <br/>
+   Prix :
+   <%=
+   JSON.stringify(createdDestinations[item].prix)
+   %>
+   <br/>
+   Places :
+   <%=
+   JSON.stringify(createdDestinations[item].places)
+   %>
+   <br/>
+   <input type="hidden" name="id" value="<%= createdDestinations[item].id %>">
+   <input type="hidden" name="nom" value="<%= nom  %>">
+   <button type="submit">Réserver</button>
+   <br/><br/><br/><br/> 
+   </form>
+
+   <%
+}
+ %>
+
+
+</p>
