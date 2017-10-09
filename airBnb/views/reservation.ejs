@@ -1,23 +1,24 @@
-<h1>Reservation de l'hotel  <%= name %> numéro <%= id %></h1>
+<h1>Reservation de l'hotel  <%= nom %> numéro <%= id %></h1>
 
 <p>
 
-<form action="/destination/hotel/reservation/" method="get">
+<form action="/destination/hotel/reservation/confirm/<%= id %>/<%= nom %>/<%= 1 %>" method="get">
 Nom de l'hotel :
 <%=
-hotel.nom
+JSON.stringify(hotel.nom)
 %>
 <br/>
 Prix de l'hotel :
 <%=
-hotel.prix
+JSON.stringify(hotel.prix)
 %>
 <br/>
 places disponnibles de l'hotel :
 <%=
-hotel.places
+JSON.stringify(hotel.places)
 %>
 <br/>
+<!--
 Nombre des places souhaitées
 
 <select name="placesR">
@@ -28,11 +29,8 @@ Nombre des places souhaitées
     <%
     }
     %>
-</select>
-
-<input type="hidden" name="id" value="<%= id %>">
-<input type="hidden" name="nom" value="<%= name %>">
-<br/>
+</select><br/>
+-->
 <button type="submit">Réserver</button>
 </form>
 

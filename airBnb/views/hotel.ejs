@@ -6,9 +6,10 @@
 
 for (var item in  createdDestinations ) {
     console.log(createdDestinations)
+
    %>
 
-   <form action="/destination/hotel" method="get">
+   <form action="/destination/hotel/<%= createdDestinations[item].id %>/<%= nom %>" method="get">
    Nom :
    <%=
    JSON.stringify(createdDestinations[item].nom)
@@ -24,9 +25,19 @@ for (var item in  createdDestinations ) {
    JSON.stringify(createdDestinations[item].places)
    %>
    <br/>
-   <input type="hidden" name="id" value="<%= createdDestinations[item].id %>">
-   <input type="hidden" name="nom" value="<%= nom  %>">
-   <button type="submit">Réserver</button>
+
+   <% console.log(createdDestinations[item].reserved) %>
+
+
+   <% if(createdDestinations[item].reserved == 1){ %>
+    <p > Désolé, cette réservation est déjà prise !</p>
+  <% } else{ %>  
+    <button type="submit">Réserver</button>
+ <% } %>
+    
+
+   
+
    <br/><br/><br/><br/> 
    </form>
 
