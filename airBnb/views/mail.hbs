@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mail</title>
+</head>
+<body>
+    <h2>
+        {{data}}
+    </h2><br/>
+
+    <form action="send_email" method="POST">
+        <label>From :</label><br/>
+        <input type="text" name="from"><br/>
+        <label>To :</label><br/>
+        <input type="text" name="to"><br/>
+        <label>Subject :</label><br/>
+        <input type="text" name="subject"><br/>
+        <label>Corps :</label><br/>
+        <input type="text" name="corps"><br/>
+
+        <button type="submit">Envoyer votre mail</button>
+    </form>
+</body>
+</html>
